@@ -13,8 +13,14 @@ Forensic được chia thành các mảng sau:
 
 Một số khái niệm:
 
-- File Signature
-A typical file signature is something which defines the nature of a file and also tells us about the specific features of the particular file. This is also called as the file header or sometimes as the checksum.
+- File Signature là một giá trị dùng để xác định loại tệp. 
+~~~txt
+      Ví dụ:
+      PNG -> 89 50 4E 47 0D 0A 1A 0A
+      ZIP FILE -> 50 4B 03 04 or 50 4B 05 06
+~~~
+
+
 - Chunk là một đoạn (fragment) thông tin được sử dụng ở nhiều định dạng của tập tin đa phương tiện (multimedia file), chẳng hạn như PNG, MP3,... Mỗi chunk chứa một header cho biết một số tham số (ví dụ: loại chunk, comment, kích thước, v.v.). Theo sau header là một vùng chứa dữ liệu, được chương trình giải mã (decode) từ các tham số trong header.
 
 - Checksum  là một chuỗi ngắn, duy nhất xuất phát từ việc chạy thuật toán mã hóa trên một file nhất định. Thuật toán xem xét tất cả các bit tạo nên một file và dựa trên những bit duy nhất đó, tạo ra một checksum. Nó được sử dụng để kiểm tra tính toàn vẹn dữ liệu để đảm bảo tập tin không bị hỏng trong quá trình tải xuống (download) và tệp không bị nhiễm phần mềm độc hại (malware) hoặc phần mềm độc hại khác.
@@ -22,6 +28,12 @@ A typical file signature is something which defines the nature of a file and als
 - Lossless Compression (Nén không mất dữ liệu) là làm giảm kích thước file mà không làm giảm chất lượng.
 
 - Lossy Compression (Nén mất dữ liệu): là làm giảm kích thước file mà chất lượng và dữ liệu bị mất so với phiên bản gốc.
+
+Công cụ thường dùng:
+
+- Binwalk: Trích xuất file nằm trong một file khác.
+
+- HxD: trình xoạn thảo mã hex trong file
 
 ## Network Forensics
 
