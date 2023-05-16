@@ -43,10 +43,13 @@ End Sub
 
 +----------+--------------------+---------------------------------------------+
 ```
+
 Được phần 1 của flag `Flag format: KCSC{H1_1m_sUcky_+$phlac}`. Khả năng phần 2 là giá trị của biến `$phlac` trong powershell được thi thực thi bằng script ở trên. Cho nên bước tiếp theo ta sẽ phân tích động. Cho chạy file `Flag.docm` (nhớ là tắt hết các phần mềm anti viruss và thực thi trên máy ảo), thì thấy môt mà hình terminal được bật lên và dẫn tới một video trên youtube (Cảnh bảo: đeo tai nghe trước khi chạy file =)) ).
+
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-05-16%20180624.png)
 
 Mở file trong đường dẫn `"C:\Windows\System32\winevt\Logs\Microsoft-Windows-PowerShell%4Operational.evtx"` để xem lịch sử cmd đã thực thi. Thấy có ps được chạy khi mở file 'Flag.docm'
+
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-05-16%20181608.png)
 
 ```
@@ -64,6 +67,7 @@ ${phlac}=("{2}{5}{0}{4}{1}{3}" -f 'y',("{2}{1}{0}" -f ("{2}{1}{0}" -f'H',("{0}{1
 ```
 
 Tìm thấy được biến $phlac
+
 ```
 ${phlac}=("{2}{5}{0}{4}{1}{3}" -f 'y',("{2}{1}{0}" -f ("{2}{1}{0}" -f'H',("{0}{1}" -f'_a','h1'),'_m3'),'0t','u_g'),("{0}{2}{1}"-f 'Tr0',("{0}{1}" -f '4',("{0}{1}" -f("{0}{1}"-f'lw','@r'),'3')),("{1}{0}"-f'_m','ll')),'i','0','_');
 ```
