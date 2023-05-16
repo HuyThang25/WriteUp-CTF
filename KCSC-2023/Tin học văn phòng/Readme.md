@@ -1,6 +1,6 @@
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-05-15%20223359.png)
 
-Đề cho một file 'docm' chứa malware. Sử dụng tool olvba để phân tích:
+Đề cho một file 'docm' chứa malware. Sử dụng tool olevba để phân tích:
 ```
 -------------------------------------------------------------------------------
 VBA MACRO NewMacros.bas
