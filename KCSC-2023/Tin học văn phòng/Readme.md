@@ -44,7 +44,7 @@ End Sub
 +----------+--------------------+---------------------------------------------+
 ```
 
-Được phần 1 của flag `Flag format: KCSC{H1_1m_sUcky_+$phlac}`. Khả năng phần 2 là giá trị của biến `$phlac` trong powershell được thi thực thi bằng script ở trên. Cho nên bước tiếp theo ta sẽ phân tích động. Cho chạy file `Flag.docm` (nhớ là tắt hết các phần mềm anti viruss và thực thi trên máy ảo), thì thấy môt mà hình terminal được bật lên và dẫn tới một video trên youtube (Cảnh bảo: đeo tai nghe trước khi chạy file =)) ).
+Được phần 1 của flag `Flag format: KCSC{H1_1m_sUcky_+$phlac}`. Khả năng phần 2 là giá trị của biến `$phlac` trong powershell được thi thực thi bằng script ở trên. Cho nên bước tiếp theo ta sẽ phân tích động. Chạy file `Flag.docm` (nhớ là tắt hết các phần mềm antivirus và thực thi trên máy ảo) thì thấy môt màn hình terminal được bật lên và dẫn tới một video trên youtube (Cảnh bảo: đeo tai nghe trước khi chạy file =)) ).
 
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-05-16%20180624.png)
 
