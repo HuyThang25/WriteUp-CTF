@@ -19,4 +19,5 @@ Decode chuỗi base64 phía trên bằng [Cyberchef](https://cyberchef.org/#reci
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-05-16%20202001.png) 
 
 Mở file ảnh ta sẽ có flag
+
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-05-16%20202317.png)
