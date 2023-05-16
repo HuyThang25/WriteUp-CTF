@@ -20,7 +20,7 @@ Sau khi giải nén ta được một đoạn script sau:
 cat .\script.ps1
 ```
 
-Cho đến khi ra powershell sau:
+Cho đến khi ra như sau:
 
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-05-16%20201505.png)
 
