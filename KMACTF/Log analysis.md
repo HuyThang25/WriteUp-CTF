@@ -46,7 +46,7 @@ Event này thực thi đoạn script sau:
 
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20170831.png)
 
-Ta thấy có cmd `& 'C:\Users\long\Desktop\revshell.ps1'` mà đây cũng là path của event thực thi đoạn script phía trên
+Ta thấy có cmd `& 'C:\Users\long\Desktop\revshell.ps1'` mà đây cũng là path của script band đầu 
 
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20170855.png)
 
