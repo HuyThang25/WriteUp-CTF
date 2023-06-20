@@ -50,7 +50,7 @@ Ta thấy có cmd `& 'C:\Users\long\Desktop\revshell.ps1'` mà đây cũng là p
 
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20170855.png)
 
-Nhận thấy 2 event chạy cách nhau 1s => đoạn script phía trên được thực thi do câu lệnh `& 'C:\Users\long\Desktop\revshell.ps1'`  => 2 event nằm trong cùng một tiến trình => PID = 4144
+Nhận thấy 2 event chạy cách nhau 1s => đoạn script ban đầu được thực thi do câu lệnh `& 'C:\Users\long\Desktop\revshell.ps1'`  => 2 event nằm trong cùng một tiến trình => PID = 4144
 
 # Lấy Domain và User
 
