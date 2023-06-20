@@ -42,8 +42,15 @@ Nhưng có vẻ như đã bị động tay khiến cho không thể xem được
 
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20162724.png)
 
-Nhận thấy event này được thực thi chỉ cách đoạn trước có 1 giây nên khả năng là nằm trong cùng 1 tiến trình => PID = 4144
+Event này thực thi đoạn script sau:
 
+![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20170831.png)
+
+Ta thấy có cmd `& 'C:\Users\long\Desktop\revshell.ps1'` mà đây cũng là path của event thực thi đoạn script phía trên
+
+![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20170855.png)
+
+=> 2 event nằm trong cùng một tiến trình => PID = 4144
 # Lấy Domain và User
 
 Sử dụng file `Security.evtx` để tìm user tạo tiến trình 4144
@@ -52,9 +59,6 @@ Sử dụng file `Security.evtx` để tìm user tạo tiến trình 4144
 
 Ta thấy event tạo process có id là 0x1030 (4144) do user `long` tạo ra và domain là `KMA`
 
-![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20161053.png)
-
-=> Domain = KMA
 # Lấy thời gian :
 
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20161236.png)
