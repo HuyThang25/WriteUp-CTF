@@ -29,7 +29,7 @@ $client.Close()
 - Lấy PID của tiến trình hiện tại: `Get-Process -Id $PID`
 - Lấy tên của Domain và User: `[System.Security.Principal.WindowsIdentity]::GetCurrent().Name`
 - Lấy thời gian lúc thực hiện script: `Get-Date`
-- Sau đó băm những thứ lấy được và gửi cho ip `192.168.253.27` qua port `4953` bằng giao thức TCP
+- Sau đó băm MD5 những thứ lấy được và gửi cho ip `192.168.253.27` qua port `4953` bằng giao thức TCP
 
 # Solved
 
