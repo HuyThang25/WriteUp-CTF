@@ -46,13 +46,11 @@ Nhận thấy event này được thực thi chỉ cách đoạn trước có 1 
 
 # Lấy Domain và User
 
-Xem phần Path
+Sử dụng file `Security.evtx` để tìm user tạo tiến trình 4144
 
-![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20160939.png)
+![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20170123.png)
 
-Đươc user = long
-
-Còn Domain thì sử dụng file `Security.evtx` để lấy :
+Ta thấy event tạo process có id là 0x1030 (4144) do user `long` tạo ra và domain là `KMA`
 
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20161053.png)
 
