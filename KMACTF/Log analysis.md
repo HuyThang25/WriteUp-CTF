@@ -71,4 +71,4 @@ echo "KMACTF{$(([System.BitConverter]::ToString(([System.Security.Cryptography.M
 ```
 Ta đươc flag:
 
-![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20161717.png)
+![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-06-20%20163630.png)
