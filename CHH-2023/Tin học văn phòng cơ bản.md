@@ -1,4 +1,4 @@
-Đề cho một file Doc `Challange.doc` chưa malware. Sử dụng tool olevba để phân tích
+Đề cho một file Doc `Challange.doc` chứa malware. Sử dụng tool olevba để phân tích
 
 ```
 $ olevba Challenge.doc 
