@@ -15,7 +15,7 @@ tshark -nr TrivialFTP.pcapng -Y 'ip.dst == 192.168.25.1' -T fields -e data > dat
 		2 bytes opcode. Opcode = 00 03 ở đây khai báo message này là data message.
 		2 bytes block number. Khai báo thứ tự của data trong stream.
 	
- Ta phải cắt đi 4 byte này. Do sử dụng mã hoá netascii nên ta phải thực hiện bước nữa	
+ Ta phải cắt đi 4 byte này và do sử dụng mã hoá netascii nên ta phải thực hiện bước nữa	
 
 		Chuỗi mã NetASCII: 0D0A chuyển đổi thành mã ASCII: 0A (LF)
 		Chuỗi mã NetASCII: 0D00 chuyển đổi thành mã ASCII: 0D (CR)
