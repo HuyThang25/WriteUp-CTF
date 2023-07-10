@@ -1,7 +1,7 @@
 Đề cho một file `NTUSER.DAT`, mở file xem thì thấy là một file registry
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-07-10%20200108.png)
 
-Sử dụng tool RegistryExplorer để mở tệp. Mình load hive và tìm đến path `Software\Microsoft\Windows\CurrentVersion\Run` để các câu lệnh được thực thi
+Sử dụng tool RegistryExplorer để mở tệp. Mình load hive và tìm đến path `Software\Microsoft\Windows\CurrentVersion\Run` để xem các câu lệnh đã thực thi
 
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-07-10%20200634.png)
 
