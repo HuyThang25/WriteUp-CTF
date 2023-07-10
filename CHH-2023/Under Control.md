@@ -285,7 +285,7 @@ Sau khi chạy, thấy thông tin nhận được là các câu lệnh powershel
 
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-07-10%20221455.png)
 
-Tiếp tục phân tích đoạn powershel thì thấy nó chạy câu lệnh nhận được rồi lại mã hoá thông tin đó và đẩy lên đường dẫn `128.199.207.220:7331/results/` thông qua giao thức http bằng phương thức POST
+Tiếp tục phân tích đoạn powershel thì thấy nó chạy câu lệnh powsershell nhận được rồi lại mã hoá thông tin đó và đẩy lên đường dẫn `128.199.207.220:7331/results/` thông qua giao thức http bằng phương thức POST
 
 ```powershell
  if (${FlAg} -eq 'VALID'){
