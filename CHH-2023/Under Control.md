@@ -255,7 +255,7 @@ for (;;){
 }
 ```
 
-Phân tích từ trên xuống thì thấy đoạn script lấy thông tin từ địa chỉ 128.199.207.220:7331/tasks/, sử dụng giao thức http với phương thức GET. Sau đó giải mã aes (với key =  `d/3KwjM7m2cGAtLI67KlhDuXI/XRKSTkOlmJXE42R+M=`, iv = 16 byte đầu của dữ liệu) thông tin đó. Do đó mình đã mỗ phỏng lại bằng cách dùng filter `ip.src == 128.199.207.220 && http &&  tcp.segment_data ` để lọc những gói tin từ địa chỉ `128.199.207.220` phản hồi lại bằng giao thức http mà có data.
+Phân tích từ trên xuống thì thấy đoạn script lấy thông tin từ đường dẫn `128.199.207.220:7331/tasks/`, sử dụng giao thức http với phương thức GET. Sau đó giải mã aes (với key =  `d/3KwjM7m2cGAtLI67KlhDuXI/XRKSTkOlmJXE42R+M=`, iv = 16 byte đầu của dữ liệu) thông tin đó. Do đó mình đã mỗ phỏng lại bằng cách dùng filter `ip.src == 128.199.207.220 && http &&  tcp.segment_data ` để lọc những gói tin từ địa chỉ `128.199.207.220` phản hồi lại bằng giao thức http mà có data.
 
 Sử dụng tshark để thu thập dữ liệu
 ```
@@ -285,7 +285,7 @@ Sau khi chạy, thấy thông tin nhận được là các câu lệnh powershel
 
 ![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-07-10%20221455.png)
 
-Tiếp tục phân tích đoạn powershel thì thấy nó chạy câu lệnh nhận được rồi lại mã hoá thông tin đó và đẩy lên địa chỉ 128.199.207.220:7331/results/ thông qua giao thức http bằng phương thức POST
+Tiếp tục phân tích đoạn powershel thì thấy nó chạy câu lệnh nhận được rồi lại mã hoá thông tin đó và đẩy lên đường dẫn `128.199.207.220:7331/results/` thông qua giao thức http bằng phương thức POST
 
 ```powershell
  if (${FlAg} -eq 'VALID'){
@@ -331,8 +331,9 @@ Tiếp tục phân tích đoạn powershel thì thấy nó chạy câu lệnh nh
             }
 ```
 Lọc những gói tin http sử dụng phương thức POST để nó đã push lên những thông tin gì
+![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-07-10%20222057.png)
 
-Dùng tool tshark thi thập dữ liệu 
+Dùng tool tshark thu thập dữ liệu 
 
 ```
 tshark -nr /mnt/c/Users/ASUS/Desktop/arenas2-forensics-undercontrol/NoStarWhere.pcapng -Y '(http.request.method == POST ) && (http.request.uri == "/results/IFDRBU")' -T fields -e urlencoded-form.value > /mnt/c/Users/ASUS/Desktop/data.txt
