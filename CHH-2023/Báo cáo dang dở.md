@@ -54,7 +54,7 @@ python ../../volatility3/vol.py -f MEMORY.DMP windows.filescan | grep -i doc
 0x7e4862c0      \Windows\System32\mydocs.dll    216
 0x7e5de070      \Windows\System32\shdocvw.dll   216
 ```
-Tìm thấy file `AutoRecovery save of Document1.asd`. File .asd . Sử dụng plugin dumpfiles đê dump file này ra phân tích.
+Tìm thấy file `AutoRecovery save of Document1.asd`. File .asd là một loại tập tin được tạo ra bởi Microsoft Word để lưu trữ thông tin tự động phục hồi. Khi bạn làm việc trên một tài liệu trong Word và chương trình bị đột ngột tắt hoặc máy tính bị khởi động lại mà không lưu tài liệu, Word sẽ tạo một tập tin .asd để lưu trữ phiên bản gần nhất của tài liệu. . Sử dụng plugin dumpfiles đê dump file này ra phân tích.
 
 ```
 $ python ../../volatility3/vol.py -f MEMORY.DMP windows.dumpfile --physaddr 0x7e3e2070 
