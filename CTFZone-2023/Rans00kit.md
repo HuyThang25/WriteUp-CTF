@@ -17,7 +17,12 @@ Sau một hồi phân tích thì mình cũng không ra được gì. Thử quét
 
 Với key và iv được lấy từ hàm _GENKEY và mảng salt được băm ra
 
+![Screenshot 2023-08-14 210343](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/2b9322c1-ca09-42a9-9c31-d81c0356833c)
+
+
 ![Screenshot 2023-08-14 203417](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/ac166846-167c-4422-8b8d-f529f0c4a55f)
+
+
 
 Ở dòng này hàm _GENKEY sau khi được gọi xong đã được gán vào trường `INFO` trong registry `Software\\Wow6432Node\\Microsoft\\Active Setup\\Status`
 
