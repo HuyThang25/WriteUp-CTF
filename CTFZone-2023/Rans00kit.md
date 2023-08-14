@@ -20,7 +20,7 @@ Có vẻ như đây là một file bat được chuyển thành exe.
 ![image](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/030dc75a-518f-48c4-a5b4-f4f093cfbd48)
 
 
-Những tham số được truyền vào khi chạy file `VGAuthCGI.exe` là các options và tên file, thư mục ở thư mục hiện tại. Sau đó các file hay thư mục sẽ được chuyền vào khi thực thi dịch vụ agony với nhiệm vụ tương ứng với các options. Ví dụ như tham số p sẽ ẩn đi những tiến trình chuyển vào. Có vẻ như file `agony.sys` là một rootkit  
+Những tham số được truyền vào khi chạy file `VGAuthCGI.exe` là các options và tên file, thư mục ở thư mục hiện tại. Sau đó các file hay thư mục sẽ được chuyền vào khi thực thi dịch vụ agony với nhiệm vụ tương ứng với các options. Ví dụ như tham số p sẽ ẩn đi những tiến trình được chuyền vào. Có vẻ như file `agony.sys` là một rootkit  
 ![image](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/1c10fcd9-7f9b-40ae-bbda-5e87a6035b79)
 
 ![image](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/03a6b673-f5a2-4498-9d51-97bb1a802cab)
