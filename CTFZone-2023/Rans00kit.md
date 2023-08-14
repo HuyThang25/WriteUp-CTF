@@ -5,11 +5,33 @@
 
 ![Screenshot 2023-08-14 092706](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/db1552c9-ed26-47a8-a930-f71ef0b63cb0)
 
-Sau một hồi phân tích thì mình cũng không ra được gì. Thử quét lại thì tìm được một file mới
+Sau một hồi phân tích thì mình cũng không ra được gì. Mình sử dụng tool [autoruns](https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns) thì tìm được một file khác
 
-![260388970-0ac95fd4-4576-4dbb-87ca-8f95e08a3f88](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/bc58e69b-4c9e-4050-ad75-1123be77c81e)
+![Screenshot 2023-08-14 211302](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/cf8cef97-b663-46e6-9515-30b4fa3c441a)
 
-Đây là một file ransomware được viết bằng .NET, sử dụng dnSpy để decompile. Đọc qua code thì thấy nó sử dụng aes-cbc để mã hoá những file trong thư mục hiện tại:
+Sử dụng tool [upx](https://www.bing.com/ck/a?!&&p=b1a8608d58e1eb8cJmltdHM9MTY5MTk3MTIwMCZpZ3VpZD0xNTM5MTRlZi04OWFhLTZmNWItMDIzMC0wNjEyODhhYjZlZGImaW5zaWQ9NTE4Mg&ptn=3&hsh=3&fclid=153914ef-89aa-6f5b-0230-061288ab6edb&psq=upx&u=a1aHR0cHM6Ly91cHguZ2l0aHViLmlvLw&ntb=1) để decompress file. Ta sẽ thấy một đoạn powershell được thực thi bên trong: 
+
+![image](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/9e1dd41e-b51f-4e36-b87d-1b5ba97fe92f)
+
+Có vẻ như đây là một file bat được chuyển thành exe.
+
+Đọc code file `VGAuthCGI.exe` trong ida sẽ thấy nó gọi đến file `agony.sys`
+
+![image](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/030dc75a-518f-48c4-a5b4-f4f093cfbd48)
+
+
+Những tham số được truyền vào khi chạy file `VGAuthCGI.exe` là các options và tên file, thư mục ở thư mục hiện tại. Sau đó các file hay thư mục sẽ được chuyền vào khi thực thi dịch vụ agony với nhiệm vụ tương ứng với các options. 
+![image](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/1c10fcd9-7f9b-40ae-bbda-5e87a6035b79)
+
+![image](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/03a6b673-f5a2-4498-9d51-97bb1a802cab)
+
+![image](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/f8c60a24-b5b7-416d-9b64-61f2262f254d)
+
+Do đó mình đã mở những file và thư mục đó thì tìm được 2 file này:
+
+![Screenshot 2023-08-14 205011](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/0339dd75-2025-4799-a75e-32c3e5ff1cfb)
+
+Trong này thì có file `aliasStore` là một file ransomware được viết bằng .NET. Sử dụng dnSpy để compile. Đọc qua code thì thấy nó sử dụng aes-cbc để mã hoá những file trong thư mục hiện tại:
 
 ![Screenshot 2023-08-14 202847](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/f011f0eb-aa82-4e03-bf0b-251eca301f89)
 
