@@ -15,7 +15,7 @@ Sau một hồi phân tích thì mình cũng không ra được gì. Thử quét
 
 ![Screenshot 2023-08-14 202928](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/5f2f0949-8d5a-4295-8598-c9986b72ec6c)
 
-Với key và iv được lấy từ hàm _GENKEY và mảng salt được băm ra
+Với key và iv được lấy từ hàm _GENKEY và mảng salt được băm sha256 
 
 ![Screenshot 2023-08-14 210343](https://github.com/HuyThang25/WriteUp-CTF/assets/93728466/2b9322c1-ca09-42a9-9c31-d81c0356833c)
 
