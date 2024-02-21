@@ -1,3 +1,6 @@
+Để giải mã mật khẩu trong file login cần có
+- key nằm trong file `Local State` ( để lấy key cần lấy giá trị trong trường os_cypt, đây là phần mã hóa của key. Giải mã bằng cách lấy từ byte thứ 5 trở đi, rồi decrypt DPAPI_BLOB với key là master key. Để lấy được master key thì cần phải có file memdump của tiến trình `lsass.exe`, sử dụng `mimikazt` để lấy master key. Hoặc sử dụng plugin của `MEMPROCFS` để lấy)  
+Decrypt pass bằng AES với key lấy được ở trên.
 ```py
 import os
 import json
